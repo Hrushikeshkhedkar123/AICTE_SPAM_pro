@@ -1,8 +1,8 @@
 import streamlit as st
 import pickle
 
-model = pickle.load(open('spam123.pkl','rb '))
-cv = pickle.load(open('vac.pkl','rb'))
+model = pickle.load(open('C:/Users/91749/OneDrive/Desktop/AICTE_SPAM_pro 11/AICTE_SPAM_pro/spam.pkl','rb'))
+cv = pickle.load(open('C:/Users/91749/OneDrive/Desktop/AICTE_SPAM_pro 11/AICTE_SPAM_pro/vec.pkl','rb'))
 
 def main():
     st.title("Email spam classification Aplication")
@@ -16,7 +16,7 @@ def main():
             vac=cv.transform(data).toarray()
             result=model.predict(vac)
             if result[0]==0:
-                st.succes("This is Not A Spam Email")
+                st.success("This is Not A Spam Email")
             else:
                 st.error("This is A Spam Email")
         else:
